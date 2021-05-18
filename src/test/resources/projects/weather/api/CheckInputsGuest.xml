@@ -13,7 +13,7 @@
         <parameter name="city" value="Yoshkar-Ola"/>
         <parameter name="cod" value="200"/>
         <classes>
-            <class name="projects.weather.CheckStatus"/>
+            <class name="projects.weather.api.CheckStatus"/>
         </classes>
     </test>
 
@@ -21,7 +21,7 @@
         <parameter name="city" value="Moscow"/>
         <parameter name="cod" value="200"/>
         <classes>
-            <class name="projects.weather.CheckStatus"/>
+            <class name="projects.weather.api.CheckStatus"/>
         </classes>
     </test>
 

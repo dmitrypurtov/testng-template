@@ -11,7 +11,8 @@ public class BaseTestCase {
 
     protected Credentials credentials;
 
-    public BaseTestCase() {
+    public BaseTestCase(Credentials credentials) {
+        this.credentials = credentials;
     }
 
     @BeforeMethod(description = "Api вход")

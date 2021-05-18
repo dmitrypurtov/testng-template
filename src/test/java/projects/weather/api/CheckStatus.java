@@ -1,4 +1,4 @@
-package projects.weather;
+package projects.weather.api;
 
 import common.base.BaseTestCase;
 import common.containers.Credentials;
@@ -10,10 +10,15 @@ import weather.api.helpers.WeatherHelper;
 
 public class CheckStatus extends BaseTestCase {
 
+    @Parameters({"baseUrl"})
+    public CheckStatus(String baseUrl) {
+        super(new Credentials(baseUrl));
+    }
+
     @Test
-    @Parameters({"baseUrl", "city", "cod"})
-    public void test(String baseUrl, String city, Integer cod) {
-        ModelOpenWeatherMap modelOpenWeatherMap = new WeatherHelper(new Credentials(baseUrl)).getOpenWeatherMap(city);
+    @Parameters({"city", "cod"})
+    public void checkCod(String city, Integer cod) {
+        ModelOpenWeatherMap modelOpenWeatherMap = new WeatherHelper(credentials).getOpenWeatherMap(city);
         Assert.assertEquals(modelOpenWeatherMap.getCod(), cod,
                 "Ошибка в проверке Cod");
     }

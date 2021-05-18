@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Проверка цен" verbose="1" parallel="tests" thread-count="1">
+
+    <parameter name="baseUrl" value="openweathermap.org"/>
+
+    <test name="Проверка цены Startup">
+        <parameter name="tariffName" value="Startup"/>
+        <parameter name="price" value="40 USD"/>
+        <classes>
+            <class name="projects.weather.ui.CheckPrice"/>
+        </classes>
+    </test>
+
+</suite>
