@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Проверка погоды" verbose="1" parallel="tests" thread-count="4">
+
+    <listeners>
+        <listener class-name="common.listeners.SimpleTestResultLogListener"/>
+        <listener class-name="common.listeners.RetryTestAnnotationTransformerListener"/>
+    </listeners>
+
+    <parameter name="baseUrl" value="api.openweathermap.org"/>
+
+    <test name="Проверка погоды в городе Йошкар-Ола">
+        <parameter name="city" value="Yoshkar-Ola"/>
+        <parameter name="cod" value="200"/>
+        <classes>
+            <class name="projects.weather.CheckStatus"/>
+        </classes>
+    </test>
+
+    <test name="Проверка погоды в городе Москва">
+        <parameter name="city" value="Moscow"/>
+        <parameter name="cod" value="200"/>
+        <classes>
+            <class name="projects.weather.CheckStatus"/>
+        </classes>
+    </test>
+
+</suite>
